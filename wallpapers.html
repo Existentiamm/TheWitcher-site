@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style-wallpapers.css">
+    <title>The Witcher site</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="https://wallpaperaccess.com">Wallpapers</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="https://thewitcher.com/pl/witcher3" alt="Game The Witcher">Game</a></li>
+                <li>
+                    <a href="https://www.fontspace.com/category/the-witcher">font</a>
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="container">
+                <div class="mySlides">
+
+                    <img src="1.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+
+                    <img src="2.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+
+                    <img src="3.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+
+                    <img src="the-witcher-3-wild-hunt-wallpaper-4k-18062.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+
+                    <img src="wp4576911-the-witcher-3-wild-hunt-poster-wallpapers.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+
+                    <img src="wp4576912-the-witcher-3-wild-hunt-poster-wallpapers (1).jpg" style="width:100%">
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+
+                <div class="caption-container">
+                    <p id="caption"></p>
+                </div>
+
+                <div class="row">
+                    <div class="column">
+                        <img class="demo cursor" src="1.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Witcher">
+                    </div>
+                    <div class="column">
+                        <img class="demo cursor" src="2.jpg" style="width:100%" onclick="currentSlide(2)" alt="The Witcher">
+                    </div>
+                    <div class="column">
+                        <img class="demo cursor" src="3.jpg" style="width:100%" onclick="currentSlide(3)" alt="The Witcher">
+                    </div>
+                    <div class="column">
+                        <img class="demo cursor" src="the-witcher-3-wild-hunt-wallpaper-4k-18062.jpg" style="width:100%" onclick="currentSlide(4)" alt="The Witcher">
+                    </div>
+                    <div class="column">
+                        <img class="demo cursor" src="wp4576911-the-witcher-3-wild-hunt-poster-wallpapers.jpg" style="width:100%" onclick="currentSlide(5)" alt="The Witcher">
+                    </div>
+                    <div class="column">
+                        <img class="demo cursor" src="wp4576912-the-witcher-3-wild-hunt-poster-wallpapers (1).jpg" style="width:100%" onclick="currentSlide(6)" alt="The Witchers">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="https://github.com/Existentiamm ">wykonanie: Karolina Lubczyk</a></li>
+
+            </ul>
+        </nav>
+    </footer>
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+    </script>
+
+</body>
+
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>The Witcher site</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="wallpapers.html">Wallpapers</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="https://thewitcher.com/pl/witcher3" alt="Game The Witcher">Game</a></li>
+                <li>
+                    <a href="https://www.fontspace.com/category/the-witcher">font</a>
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <aside>
+            <!-- dodaje tutaj logo-->
+            <img src=" W3_slider_tittle.png " class="banner " alt="banner The Witcher ">
+        </aside>
+        <article>
+
+            <section class="slideshow-container">
+
+                <div class="mySlides fade">
+
+                    <img src="929286.jpg" style="width:100%">
+                    <div class="text">CIRI</div>
+                </div>
+
+                <div class="mySlides fade">
+
+                    <img src="1823339.jpg" style="width:100%">
+                    <div class="text">GERALT</div>
+                </div>
+
+                <div class="mySlides fade">
+
+                    <img src="1974742.jpg" style="width:100%">
+                    <div class="text">YENNEFER</div>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br>
+
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+
+
+
+            </section>
+
+
+        </article>
+
+    </main>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="https://github.com/Existentiamm ">wykonanie: Karolina Lubczyk</a></li>
+
+            </ul>
+        </nav>
+    </footer>
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+
+</body>
+
+</html>
